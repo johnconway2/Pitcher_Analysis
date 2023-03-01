@@ -1,5 +1,10 @@
-import pandas as pd
+import csv
 
-df = pd.read_csv("Pitcher_data.csv")
-list_of_column_names=list(df.columns)
-print("List of column names:", list_of_column_names)
+pitcher_data="Pitcher_data.csv"
+count=0
+avg_era=0
+balk_age=0
+
+with open(pitcher_data, "r") as csvfile:
+    csvreader=csv.reader(csvfile)
+    header=next(csvreader)
